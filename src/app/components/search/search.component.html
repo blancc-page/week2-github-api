@@ -3,37 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- font-awsome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- meta-tag -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Github Profiles</title>
+    <title>Github Search</title>
 </head>
 <body>
+    <h1 class="heading"><a routerLink="/">Github Search</a></h1>
     <form class="user-form" id="form"(ngSubmit)="userSearch(userForm)" #userForm="ngForm">
         <input type="text" id="search" placeholder="Search a Github User." ngModel name="userName">
     </form>
     <main class="main">
         <div class="card" *ngFor="let user of users">
             <div>
-                <img (click)="getInfo($event)" [src]="user.avatar_url" 
-                alt="profile-image"
-                class="avatar">
+                <a routerLink="/api.github.com/users">
+                    <img [src]="user.avatar_url" alt="profile-image"class="avatar"> 
+                </a>
             </div>
-            <!-- <div *ngIf="users" class="user-info">
+            <div>
                 <h2>{{user.login}}</h2>
-                <p>{{user.bio}}</p>
-                <ul>
-                    <li>{{user.followers}}<strong> Followers</strong> </li>
-                    <li>{{user.following}}<strong> Following</strong> </li>
-                    <li>{{user.public_repos}}<strong> Repos</strong> </li>
-                </ul>
-                <div id="repos"></div>
-            </div> -->
+            </div>
         </div>
     </main>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.4/axios.min.js" integrity="sha512-lTLt+W7MrmDfKam+r3D2LURu0F47a3QaW5nF0c6Hl0JDZ57ruei+ovbg7BrZ+0bjVJ5YgzsAWE+RreERbpPE1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="script.js"></script>
 </body>
 </html>

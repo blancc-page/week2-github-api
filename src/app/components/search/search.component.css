@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
 .user-form{
     width: 100%;
     max-width: 700px;
@@ -11,7 +13,7 @@
     color: white;
     padding: 1rem;
     margin-bottom: 2rem;
-    margin-top: 12rem;
+    margin-top: 4rem;
     font-family: inherit;
     font-size: 1rem;
     box-shadow: 0 5px 10px rgba(154, 160, 185 ,0.05), (0 15px 40px rgba(0, 0, 0, 0.1));
@@ -23,12 +25,13 @@
     color: #bbb;
 }
 .card{
-    max-width: 800px;
+    max-width: 250px;
     background-color: #4c2885;
     border-radius: 20px;
     box-shadow: 0 5px 10px rgba(154, 160, 185 ,0.05), (0 15px 40px rgba(0, 0, 0, 0.1));
     padding: 3rem;
     margin: 0.8rem 1.5rem;
+    text-align: center;
 }
 main{
     display: grid;
@@ -44,8 +47,16 @@ main{
     color: #eee;
     margin-left: 2rem;
 }
-.user-infor h2{
+.user-info h2{
     margin-top: 0;
+    display: flex;
+    justify-content: space-around;
+}
+h1, h1 a{
+    font-family: 'Special Elite', cursive;
+    font-size: 60px;
+    text-decoration: none;
+    color: #fff;
 }
 .user-info ul{
     display: flex;

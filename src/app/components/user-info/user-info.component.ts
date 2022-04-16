@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchComponent } from '../search/search.component';
 
 @Component({
   selector: 'app-user-info',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-info.component.css']
 })
 export class UserInfoComponent implements OnInit {
-
+  users!: any[];
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.users);
   }
 
 }
