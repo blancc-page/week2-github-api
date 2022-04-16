@@ -16,7 +16,7 @@
     <main class="main">
         <div class="card" *ngFor="let user of users">
             <div>
-                <img [src]="user.avatar_url" 
+                <img (click)="getInfo($event)" [src]="user.avatar_url" 
                 alt="profile-image"
                 class="avatar">
             </div>

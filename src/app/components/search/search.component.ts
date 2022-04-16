@@ -19,11 +19,21 @@ export class SearchComponent implements OnInit {
 
   userSearch(form: NgForm){
     let {userName} = form.value;
-    return this.http.get(`${environment.API_URL}${userName}`)
+    return this.http.get(`${environment.API_URL}/search/users?q=${userName}`)
     .subscribe((response: any) => {
       // set JSON response to the gifs array
             this.users = response.items; 
             console.log(this.users);
+            
+    });
+  }
+
+  getInfo(event: any){
+    return this.http.get(`${environment.API_URL}/users`)
+    .subscribe((response: any) => {
+      // set JSON response to the gifs array
+            this.users = response.items; 
+            console.log(event);
             
     });
   }
