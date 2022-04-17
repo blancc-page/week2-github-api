@@ -11,17 +11,37 @@
     <form class="user-form" id="form"(ngSubmit)="userSearch(userForm)" #userForm="ngForm">
         <input type="text" id="search" placeholder="Search a Github User." ngModel name="userName">
     </form>
-    <main class="main">
+    <!-- <main class="main">
         <div class="card" *ngFor="let user of users">
             <div>
-                <a routerLink="/api.github.com/users">
-                    <img [src]="user.avatar_url" alt="profile-image"class="avatar"> 
-                </a>
+                    <img (click)="onSelect($event)" [src]="user.avatar_url" alt="profile-image"class="avatar"> 
             </div>
             <div>
-                <h2>{{user.login}}</h2>
+                <h2 (click)="onSelect($event)" >{{user.login}}</h2>
+
             </div>
         </div>
-    </main>
+    </main> -->
+    <div class="card">
+    <div>
+        <img [src]="photo" 
+        alt="profile-image"
+        class="avatar">
+    </div>
+    <div class="user-info">
+        <h2>{{name}}</h2>
+        <p>{{bio}}</p>
+        <ul>
+            <li>{{followers}}<strong> Followers</strong> </li>
+            <li>{{following}}<strong> Following</strong> </li>
+            <li>{{public_repos}}<strong> Repos</strong> </li>
+        </ul>
+        <div id="repos">
+            <a *ngFor="let html of html_url, let rep of repo" [href]="html" target="_blank" class="repo">
+                <p>{{rep}}</p>
+            </a>
+        </div>
+    </div>
+</div> 
 </body>
 </html>
