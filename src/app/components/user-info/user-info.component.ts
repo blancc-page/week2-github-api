@@ -50,8 +50,8 @@ export class UserInfoComponent implements OnInit {
         this.repo.push(response.name);
         this.html_url.push(response.html_url);
       });
-      console.log(this.userLogin);
-      console.log(this.html_url);
+      // console.log(this.userLogin);
+      // console.log(this.html_url);
     });
   }
 }
