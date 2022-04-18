@@ -14,8 +14,8 @@
             <li>{{public_repos}}<strong> Repos</strong> </li>
         </ul>
         <div id="repos">
-            <a *ngFor="let html of html_url, let rep of repo" [href]="html" target="_blank" class="repo">
-                <p>{{rep}}</p>
+            <a *ngFor="let rep of repo, let html of html_url" [href]="html" target="_blank" class="repo">
+                <p>{{rep.slice(31)}}</p>
             </a>
         </div>
     </div>
