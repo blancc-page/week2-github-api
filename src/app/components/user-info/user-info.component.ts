@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchComponent } from '../search/search.component';
 import { DataService } from 'src/app/services/data/data.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -40,17 +39,18 @@ export class UserInfoComponent implements OnInit {
       this.following = response.following;
       this.public_repos = response.public_repos;
 
-      console.log(this.users);
+      // console.log(this.users);
     });
 
-    this.dataService.getRepos(this.repos)
+    this.dataService.getRepos(this.repos, this.userLogin)
     .subscribe((response: any) => {
       this.responseArr = response;
+      console.log(response)
       this.responseArr.slice(0, 10).forEach((response) => {
         this.repo.push(response.name);
-        this.html_url.push(response.html_url)
+        this.html_url.push(response.html_url);
       });
-      console.log(this.repo);
+      console.log(this.userLogin);
       console.log(this.html_url);
     });
   }

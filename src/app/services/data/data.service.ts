@@ -27,7 +27,11 @@ export class DataService {
     return this.http.get(`${environment.API_URL}/users/blancc-page`);
   }
 
-  getRepos(repos: any[]){
+  getInitialRepos(repos: any[]){
     return this.http.get(`${environment.API_URL}/users/blancc-page/repos?sort=created`);
+  }
+
+  getRepos(repos: any[], username: any){
+    return this.http.get(`${environment.API_URL}/users/${username}/repos?sort=created`);
   }
 }

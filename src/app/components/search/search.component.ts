@@ -43,7 +43,7 @@ export class SearchComponent implements OnInit {
       console.log(this.users);  
     });
 
-    this.dataService.getRepos(this.repos)
+    this.dataService.getInitialRepos(this.repos)
     .subscribe((response: any) => {
       this.responseArr = response;
       this.responseArr.slice(0, 10).forEach((response) => {
