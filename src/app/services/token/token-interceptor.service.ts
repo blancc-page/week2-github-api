@@ -11,14 +11,14 @@ export class TokenInterceptorService implements HttpInterceptor {
   token!: string;
 
   constructor(private injector: Injector) { 
-    const token = environment.API_KEY;
+    let token = environment.API_KEY;
   }
 
-  intercept(req, next){
+  intercept(req,next){
     let authService = this.injector.get(AuthService)
     let tokenizedReq = req.clone({
       setHeaders: {
-        Authorization: `Bearer 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`
+        authorization: `Bearer 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`
       }
     });
     return next.handle(tokenizedReq);
