@@ -10,15 +10,13 @@ import { environment } from 'src/environments/environment';
 export class TokenInterceptorService implements HttpInterceptor {
   token!: string;
 
-  constructor(private injector: Injector) { 
-    let token = environment.API_KEY;
-  }
+  constructor(private injector: Injector) { }
 
   intercept(req,next){
     let authService = this.injector.get(AuthService)
     let tokenizedReq = req.clone({
       setHeaders: {
-        authorization: `Bearer ${environment.API_KEY}`
+        Authorization: `Bearer ${environment.API_KEY}`
       }
     });
     return next.handle(tokenizedReq);
