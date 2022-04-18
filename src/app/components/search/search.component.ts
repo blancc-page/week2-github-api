@@ -16,8 +16,11 @@ export class SearchComponent implements OnInit {
   repo: any[] = [];
   html_url: any[] = [];
   responseArr: any [] = [];
-  login!: string;
+  iLogin!: string;
+  sLogin!: string;
+  avatar!: string;
   name!: string;
+  sName!:string;
   photo!: string;
   bio!: string;
   following!: string;
@@ -30,7 +33,7 @@ export class SearchComponent implements OnInit {
     this.dataService.initialUser()
     .subscribe((response: any) => {
       this.users = response; 
-      this.login = response.login;
+      this.iLogin = response.login;
       this.name = response.name;
       this.photo = response.avatar_url;
       this.bio = response.bio;
@@ -56,17 +59,20 @@ export class SearchComponent implements OnInit {
   }
 
   userSearch(form: NgForm){
+    this.router.navigate([""], { fragment: "search" });
     let {userName} = form.value;
     this.dataService.searchUser(userName)
     .subscribe((response: any) => {
       // set JSON response to the gifs array
             this.users = response; 
-            console.log(this.users);       
+            this.avatar = response.avatar_url;
+            this.sLogin = response.login;   
+            this.sName = response.name;
     });
   }
 
   onSelect(){
-    this.router.navigate(["/", this.users[0].id]);
+    this.router.navigate(["/", this.sLogin]);
   }
   
 }

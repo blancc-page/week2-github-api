@@ -11,17 +11,20 @@
     <form class="user-form" id="form"(ngSubmit)="userSearch(userForm)" #userForm="ngForm">
         <input type="text" id="search" placeholder="Search a Github User." ngModel name="userName">
     </form>
-    <!-- <main class="main">
-        <div class="card" *ngFor="let user of users">
+    
+    <main *ngIf="avatar" class="search-main" id="search">
+        <div class="search-card">
             <div>
-                    <img (click)="onSelect($event)" [src]="user.avatar_url" alt="profile-image"class="avatar"> 
+                    <img  (click)="onSelect()" [src]="avatar" alt="profile-image"class="avatar"> 
             </div>
             <div>
-                <h2 (click)="onSelect($event)" >{{user.login}}</h2>
-
+                <h2  (click)="onSelect()" id="search-main">{{sLogin}}</h2>
+                
             </div>
         </div>
-    </main> -->
+    </main>
+
+<hr>
     <div class="card">
     <div>
         <img [src]="photo" 
@@ -43,5 +46,8 @@
         </div>
     </div>
 </div> 
+
+<hr>
+
 </body>
 </html>

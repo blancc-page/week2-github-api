@@ -1,17 +1,21 @@
 <div class="card">
     <div>
-        <img *ngFor="let user of users" [src]="user.avatar_url" 
+        <img [src]="photo" 
         alt="profile-image"
         class="avatar">
     </div>
     <div class="user-info">
-        <h2>{{userLogin}}</h2>
-        <p>{{userLogin}}</p>
+        <h2>{{name}}</h2>
+        <p>{{bio}}</p>
         <ul>
-            <li>{{userLogin}}<strong> Followers</strong> </li>
-            <li>{{userLogin}}<strong> Following</strong> </li>
-            <li>{{userLogin}}<strong> Repos</strong> </li>
+            <li>{{followers}}<strong> Followers</strong> </li>
+            <li>{{following}}<strong> Following</strong> </li>
+            <li>{{public_repos}}<strong> Repos</strong> </li>
         </ul>
-        <div id="repos"></div>
+        <div id="repos">
+            <a *ngFor="let html of html_url, let rep of repo" [href]="html" target="_blank" class="repo">
+                <p>{{rep}}</p>
+            </a>
+        </div>
     </div>
 </div>

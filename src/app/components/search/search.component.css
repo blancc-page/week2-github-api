@@ -1,17 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 
-
-h1, h1 a{
-    font-family: 'Special Elite', cursive;
-    font-size: 60px;
-    text-decoration: none;
-    color: #fff;
-}
-a{
-    text-decoration: none;
-    color: #fff;
+*{
+    box-sizing: border-box;
 }
 
+
+body{
+    background-color: #2a2a72;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+hr{
+    background-color: transparent;
+    color: grey;
+    margin: 20px 0;
+    width: 10%;
+    border-style: dotted none none;
+    border-width: 10px;
+}
 .user-form{
     width: 100%;
     max-width: 700px;
@@ -43,6 +55,28 @@ a{
     display: flex;
     padding: 3rem;
     margin: 0 1.5rem;
+}.search-card{
+    max-width: 250px;
+    background-color: #4c2885;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px rgba(154, 160, 185 ,0.05), (0 15px 40px rgba(0, 0, 0, 0.1));
+    padding: 3rem;
+    margin: 0.8rem 1.5rem;
+    text-align: center;
+}
+.search-main{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+h1, h1 a{
+    font-family: 'Special Elite', cursive;
+    font-size: 60px;
+    text-decoration: none;
+    color: #fff;
+}
+a{
+        text-decoration: none;
+    color: #fff;
 }
 .avatar{
     border-radius: 50%;

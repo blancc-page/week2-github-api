@@ -16,7 +16,7 @@ export class DataService {
   }
 
   searchUser(userName: string){
-    return this.http.get(`${environment.API_URL}/search/users?q=${userName}`);
+    return this.http.get(`${environment.API_URL}/users/${userName}`);
   }
 
   getInfo(userInfo: string){
