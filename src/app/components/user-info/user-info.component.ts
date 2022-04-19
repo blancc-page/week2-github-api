@@ -25,10 +25,11 @@ export class UserInfoComponent implements OnInit {
 
 
   ngOnInit(): void {
+// takes a snapshot of the route params and gets the search term (user-info)
     let login = String(this.route.snapshot.paramMap.get("user-info")!);
     this.userLogin = login;
 
-    
+// on loadup the page calls an api to get the searched github profile info
     this.dataService.getInfo(this.userLogin)
     .subscribe((response: any) => {
       this.users = response;
@@ -41,7 +42,7 @@ export class UserInfoComponent implements OnInit {
 
       // console.log(this.users);
     });
-
+// on loadup the page calls an api to get the searched github repo info
     this.dataService.getRepos(this.repos, this.userLogin)
     .subscribe((response: any) => {
       this.responseArr = response;

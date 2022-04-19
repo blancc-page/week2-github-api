@@ -2,12 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SearchComponent } from './components/search/search.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
 
+// create route paths for my components
 const routes: Routes = [
   {path: "", component: SearchComponent},
-  {path: ":user-info", component: UserInfoComponent,},
-  {path: "**", component: NotFoundComponent,}
+  {path: ":user-info", component: UserInfoComponent,}
 ];
 
 @NgModule({
@@ -18,5 +17,4 @@ export class AppRoutingModule { }
 export const routingComponents = [
   SearchComponent,
   UserInfoComponent,
-  NotFoundComponent,
 ]

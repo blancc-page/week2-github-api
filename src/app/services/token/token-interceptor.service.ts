@@ -7,6 +7,9 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
+
+// using headers to authorize api access
+
 export class TokenInterceptorService  {
   token!: string;
 

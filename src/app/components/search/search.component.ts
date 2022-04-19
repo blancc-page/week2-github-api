@@ -28,7 +28,7 @@ export class SearchComponent implements OnInit {
   public_repos!: number;
 
   constructor( private http: HttpClient, private router: Router, private dataService: DataService) { }
-
+// on loadup the page calls an api to get my github profile info
   ngOnInit(): void {
     this.dataService.initialUser()
     .subscribe((response: any) => {
@@ -42,7 +42,7 @@ export class SearchComponent implements OnInit {
       this.public_repos = response.public_repos;
       console.log(this.users);  
     });
-
+// on loadup the page calls an api to get my github repository info
     this.dataService.getInitialRepos(this.repos)
     .subscribe((response: any) => {
       this.responseArr = response;
@@ -58,6 +58,7 @@ export class SearchComponent implements OnInit {
     
   }
 
+// on search the value from the form is taken as a param and used in the api to search for a user
   userSearch(form: NgForm){
     this.router.navigate([""], { fragment: "search" });
     let {userName} = form.value;
@@ -70,7 +71,7 @@ export class SearchComponent implements OnInit {
             this.sName = response.name;
     });
   }
-
+// the function that is called when one clicks on the user; it redirects the browser to the appropriate route 
   onSelect(){
     this.router.navigate(["/", this.sLogin]);
   }
